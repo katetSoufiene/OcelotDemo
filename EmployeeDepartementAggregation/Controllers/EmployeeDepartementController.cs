@@ -32,6 +32,7 @@ namespace EmployeeDepartementAggregation.Controllers
 
             var employees = await employeeService.GetAsync();
 
+            //todo add all  EmployeeDepartement
             var employeesDeprtements = new List<EmployeeDepartement>();
 
             return employeesDeprtements;
