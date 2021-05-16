@@ -27,7 +27,7 @@ namespace EmployeeDepartementAggregation
             services.AddHttpClient<IEmployeeService, EmployeeService>(c =>
               c.BaseAddress = new Uri(Configuration["ApiSettings:EmployeeUrl"]));
 
-
+            services.AddSwaggerGen();
             services.AddControllers();
         }
 
@@ -37,6 +37,12 @@ namespace EmployeeDepartementAggregation
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Departement API V1");
+                });
             }
 
             app.UseHttpsRedirection();

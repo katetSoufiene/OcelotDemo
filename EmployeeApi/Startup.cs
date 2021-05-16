@@ -25,6 +25,7 @@ namespace EmployeeApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen();
             services.AddControllers();
         }
 
@@ -34,6 +35,12 @@ namespace EmployeeApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();              
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee API V1");
+                });
             }
 
             app.UseHttpsRedirection();
