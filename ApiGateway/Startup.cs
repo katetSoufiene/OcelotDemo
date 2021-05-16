@@ -28,7 +28,7 @@ namespace ApiGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOcelot();
-
+            services.AddSwaggerForOcelot(Configuration);
 
             services.AddControllers();
         }
@@ -39,6 +39,12 @@ namespace ApiGateway
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+                app.UseSwaggerForOcelotUI(opt =>
+                {
+                    opt.PathToSwaggerGenerator = "/swagger/docs";
+                });
             }
 
             app.UseHttpsRedirection();

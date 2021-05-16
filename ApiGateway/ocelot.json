@@ -10,7 +10,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/employees",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "employees"
 
     },
     {
@@ -23,7 +24,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/employees/{id}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "employees"
     },
     {
       "DownstreamPathTemplate": "/api/departements",
@@ -35,7 +37,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/departements",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "departements"
 
     },
     {
@@ -48,7 +51,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/departements/{id}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "departements"
     },
     {
       "DownstreamPathTemplate": "/api/employeedepartement/{id}",
@@ -60,13 +64,44 @@
         }
       ],
       "UpstreamPathTemplate": "/api/employeedepartement/{id}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "employeedepartement"
+    }
+  ],
+    "SwaggerEndPoints": [
+      {
+        "Key": "employeedepartement",
+        "Config": [
+          {
+            "Name": "Employee Departement API",
+            "Version": "v1",
+            "Url": "https://localhost:44399/swagger/v1/swagger.json"
+          }
+        ]
+      },
 
+      {
+        "Key": "departements",
+        "Config": [
+          {
+            "Name": "departements API",
+            "Version": "v1",
+            "Url": "https://localhost:44361/swagger/v1/swagger.json"
+          }
+        ]
+      },
 
-
-
-    
+      {
+        "Key": "employees",
+        "Config": [
+          {
+            "Name": "employees API",
+            "Version": "v1",
+            "Url": "https://localhost:44356/swagger/v1/swagger.json"
+          }
+        ]
+      }
+     
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44359"
