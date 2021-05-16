@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApiGateway
+namespace EmployeeApi
 {
     public class Program
     {
@@ -20,7 +20,6 @@ namespace ApiGateway
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.ConfigureAppConfiguration(config => config.AddJsonFile("ocelot.json"));
                     webBuilder.UseStartup<Startup>();
                 });
     }
