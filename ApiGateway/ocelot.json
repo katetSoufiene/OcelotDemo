@@ -49,7 +49,24 @@
       ],
       "UpstreamPathTemplate": "/api/departements/{id}",
       "UpstreamHttpMethod": [ "Get" ]
-    }
+    },
+    {
+      "DownstreamPathTemplate": "/api/employeedepartement/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44399
+        }
+      ],
+      "UpstreamPathTemplate": "/api/employeedepartement/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+
+
+
+    
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44359"

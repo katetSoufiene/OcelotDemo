@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeApi.Models
+namespace EmployeeDepartementAggregation.Models
 {
-    public class Employee
+    public class Departement
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string DepartementId { get; set; }
-
     }
 }

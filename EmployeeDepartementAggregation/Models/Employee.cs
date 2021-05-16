@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeApi.Models
+namespace EmployeeDepartementAggregation.Models
 {
     public class Employee
     {

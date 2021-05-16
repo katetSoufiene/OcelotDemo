@@ -14,24 +14,24 @@ namespace EmployeeApi.Controllers
     public class EmployeesController : ControllerBase
     {
 
-        private readonly List<Employee> employee = new List<Employee>()
+        private readonly List<Employee> employees = new List<Employee>()
         {
-            new Employee(){ Id= new Guid(), Name= "Tic"},
-            new Employee(){ Id= new Guid(), Name= "Toc"},
+            new Employee(){ Id= "1", Name= "Tic",DepartementId="it"},
+            new Employee(){ Id= "2", Name= "Toc",DepartementId="rh"},
         };
 
         // GET: api/<EmployeesController>
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IActionResult Get()
         {
-            return employee;
+            return Ok(employees);
         }
 
         // GET api/<EmployeesController>/5
         [HttpGet("{id}")]
-        public Employee Get(int id)
+        public IActionResult Get(string id)
         {
-            return employee.First();
+            return Ok(employees.Single(e => e.Id == id));
         }
 
         // POST api/<EmployeesController>

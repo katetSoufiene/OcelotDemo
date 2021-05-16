@@ -15,23 +15,23 @@ namespace DepartementApi.Controllers
     {
         private readonly List<Departement> departements = new List<Departement>()
         {
-            new Departement(){ Id= new Guid(), Name= "It"},
-            new Departement(){ Id= new Guid(), Name= "HR"},
+            new Departement(){ Id= "it", Name= "It"},
+            new Departement(){ Id= "rh", Name= "HR"},
         };
 
 
         // GET: api/<DepartementsController>
         [HttpGet]
-        public IEnumerable<Departement> Get()
+        public IActionResult Get()
         {
-            return departements;
+            return Ok(departements);
         }
 
         // GET api/<DepartementsController>/5
         [HttpGet("{id}")]
-        public Departement Get(int id)
+        public IActionResult Get(string id)
         {
-            return departements.First();
+            return Ok(departements.Single(d => d.Id == id));
         }
 
         // POST api/<DepartementsController>
